@@ -1,0 +1,96 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{96F5D06A-3DC4-4046-8DE5-75CBAB084291}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="A. Before Generics\ABeforeGenerics.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="B. After Generics\BAfterGenerics.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="C. Sorting\CSorting.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="D. Sorting Revisited\DSortingRevisited.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="E. Search\ESearch.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="F. Dictionary\FAussieDictionary.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="ABeforeGenerics">
+			<MSBuild Projects="A. Before Generics\ABeforeGenerics.dproj"/>
+		</Target>
+		<Target Name="ABeforeGenerics:Clean">
+			<MSBuild Projects="A. Before Generics\ABeforeGenerics.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="ABeforeGenerics:Make">
+			<MSBuild Projects="A. Before Generics\ABeforeGenerics.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="BAfterGenerics">
+			<MSBuild Projects="B. After Generics\BAfterGenerics.dproj"/>
+		</Target>
+		<Target Name="BAfterGenerics:Clean">
+			<MSBuild Projects="B. After Generics\BAfterGenerics.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="BAfterGenerics:Make">
+			<MSBuild Projects="B. After Generics\BAfterGenerics.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="CSorting">
+			<MSBuild Projects="C. Sorting\CSorting.dproj"/>
+		</Target>
+		<Target Name="CSorting:Clean">
+			<MSBuild Projects="C. Sorting\CSorting.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="CSorting:Make">
+			<MSBuild Projects="C. Sorting\CSorting.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="DSortingRevisited">
+			<MSBuild Projects="D. Sorting Revisited\DSortingRevisited.dproj"/>
+		</Target>
+		<Target Name="DSortingRevisited:Clean">
+			<MSBuild Projects="D. Sorting Revisited\DSortingRevisited.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="DSortingRevisited:Make">
+			<MSBuild Projects="D. Sorting Revisited\DSortingRevisited.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="ESearch">
+			<MSBuild Projects="E. Search\ESearch.dproj"/>
+		</Target>
+		<Target Name="ESearch:Clean">
+			<MSBuild Projects="E. Search\ESearch.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="ESearch:Make">
+			<MSBuild Projects="E. Search\ESearch.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="FAussieDictionary">
+			<MSBuild Projects="F. Dictionary\FAussieDictionary.dproj"/>
+		</Target>
+		<Target Name="FAussieDictionary:Clean">
+			<MSBuild Projects="F. Dictionary\FAussieDictionary.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="FAussieDictionary:Make">
+			<MSBuild Projects="F. Dictionary\FAussieDictionary.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="ABeforeGenerics;BAfterGenerics;CSorting;DSortingRevisited;ESearch;FAussieDictionary"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="ABeforeGenerics:Clean;BAfterGenerics:Clean;CSorting:Clean;DSortingRevisited:Clean;ESearch:Clean;FAussieDictionary:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="ABeforeGenerics:Make;BAfterGenerics:Make;CSorting:Make;DSortingRevisited:Make;ESearch:Make;FAussieDictionary:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

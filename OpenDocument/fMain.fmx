@@ -1,0 +1,54 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  BiDiMode = bdLeftToRight
+  Caption = 'Form2'
+  ClientHeight = 158
+  ClientWidth = 460
+  Transparency = False
+  Visible = False
+  StyleLookup = 'backgroundstyle'
+  object Button1: TButton
+    Position.Point = '(368,24)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button1Click
+    TabOrder = 1
+    StaysPressed = False
+    IsPressed = False
+    Text = 'Open File'
+  end
+  object Button2: TButton
+    Position.Point = '(368,56)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button2Click
+    TabOrder = 10
+    StaysPressed = False
+    IsPressed = False
+    Text = 'Send Email'
+  end
+  object Label1: TLabel
+    Position.Point = '(16,24)'
+    Width = 345.000000000000000000
+    Height = 57.000000000000000000
+    TabOrder = 13
+    VertTextAlign = taLeading
+    Text = 'Label1'
+  end
+  object Button3: TButton
+    Position.Point = '(368,88)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button3Click
+    TabOrder = 14
+    StaysPressed = False
+    IsPressed = False
+    Text = 'Open Browser'
+  end
+  object OpenDialog1: TOpenDialog
+    Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
+    Left = 16
+    Top = 112
+  end
+end
