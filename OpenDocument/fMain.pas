@@ -13,6 +13,7 @@ type
     OpenDialog1: TOpenDialog;
     Label1: TLabel;
     Button3: TButton;
+    edtURL: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -27,7 +28,7 @@ var
 
 implementation
 uses
-  Macapi.Foundation, Macapi.AppKit;
+  Macapi.Foundation, Macapi.AppKit, idURI;
 
 {$R *.fmx}
 
@@ -57,11 +58,14 @@ end;
 
 procedure TForm2.Button3Click(Sender: TObject);
 var
+  EncodedString : String;
   URL : NSURL;
   Workspace : NSWorkspace;
 begin
+    EncodedString := TIdURI.URLEncode(edtURL.Text);
+
     URL := TNSURL.Create;
-    URL.initWithString(NSSTR('http://www.malcolmgroves.com'));
+    URL.initWithString(NSSTR(EncodedString));
 
     Workspace := TNSWorkspace.Create;
     Workspace.openURL(URL);
