@@ -1,0 +1,252 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 441
+  ClientWidth = 375
+  FormFactor.Width = 1920
+  FormFactor.Height = 1080
+  FormFactor.Devices = [dkDesktop]
+  object NavigatorAdapterBindSource1: TBindNavigator
+    Height = 25.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 16.000000000000000000
+    Width = 241.000000000000000000
+    DataSource = AdapterBindSource1
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object GroupBox1: TGroupBox
+    Height = 121.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 56.000000000000000000
+    Text = 'Values via LiveBindings'
+    Width = 329.000000000000000000
+    object EditFirstname: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Text = 'ipsum mi vehicula purus'
+      Position.X = 80.000000000000000000
+      Position.Y = 24.000000000000000000
+      Width = 153.000000000000000000
+      Height = 22.000000000000000000
+      object Label1: TLabel
+        Height = 15.000000000000000000
+        Position.X = -64.000000000000000000
+        Position.Y = 2.000000000000000000
+        Text = 'Firstname'
+        Width = 120.000000000000000000
+        WordWrap = False
+      end
+    end
+    object EditLastname: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Text = 'ipsum mi vehicula purus'
+      Position.X = 80.000000000000000000
+      Position.Y = 54.000000000000000000
+      Width = 153.000000000000000000
+      Height = 22.000000000000000000
+      object Label2: TLabel
+        Height = 15.000000000000000000
+        Position.X = -64.000000000000000000
+        Position.Y = 2.000000000000000000
+        Text = 'Lastname'
+        Width = 120.000000000000000000
+        WordWrap = False
+      end
+    end
+    object EditAge: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Text = '-33'
+      Position.X = 80.000000000000000000
+      Position.Y = 86.000000000000000000
+      Width = 100.000000000000000000
+      Height = 22.000000000000000000
+      object Label3: TLabel
+        Height = 15.000000000000000000
+        Position.X = -64.000000000000000000
+        Position.Y = 2.000000000000000000
+        Text = 'Age'
+        Width = 120.000000000000000000
+        WordWrap = False
+      end
+    end
+  end
+  object GroupBox2: TGroupBox
+    Height = 121.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 304.000000000000000000
+    Text = 'Values from Object'
+    Width = 329.000000000000000000
+    object Label6: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 59.000000000000000000
+      Text = 'Lastname'
+      Width = 120.000000000000000000
+    end
+    object Label4: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Text = 'Firstname'
+      Width = 120.000000000000000000
+    end
+    object Label5: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 95.000000000000000000
+      Text = 'Age'
+      Width = 120.000000000000000000
+    end
+    object lblObjectFirstname: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 24.000000000000000000
+      Text = 'lblObjectFirstname'
+      Width = 120.000000000000000000
+    end
+    object lblObjectLastname: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 61.000000000000000000
+      Text = 'lblObjectLastname'
+      Width = 120.000000000000000000
+    end
+    object lblObjectAge: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 95.000000000000000000
+      Text = 'lblObjectAge'
+      Width = 120.000000000000000000
+    end
+  end
+  object GroupBox3: TGroupBox
+    Height = 129.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 176.000000000000000000
+    Text = 'Values from AdapterBindSource.InternalAdapter'
+    Width = 329.000000000000000000
+    object Label10: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 32.000000000000000000
+      Text = 'Firstname'
+      Width = 120.000000000000000000
+    end
+    object Label11: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 64.000000000000000000
+      Text = 'Lastname'
+      Width = 120.000000000000000000
+    end
+    object Label12: TLabel
+      Height = 15.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 96.000000000000000000
+      Text = 'Age'
+      Width = 120.000000000000000000
+    end
+    object lblAdapterFirstname: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 32.000000000000000000
+      Text = 'lblAdapterFirstname'
+      Width = 120.000000000000000000
+    end
+    object lblAdapterLastname: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 64.000000000000000000
+      Text = 'lblAdapterLastname'
+      Width = 120.000000000000000000
+    end
+    object lblAdapterAge: TLabel
+      Height = 15.000000000000000000
+      Position.X = 80.000000000000000000
+      Position.Y = 96.000000000000000000
+      Text = 'lblAdapterAge'
+      Width = 120.000000000000000000
+    end
+  end
+  object Button1: TButton
+    DisableFocusEffect = False
+    Height = 22.000000000000000000
+    Position.X = 272.000000000000000000
+    Position.Y = 16.000000000000000000
+    Text = 'Refresh'
+    Width = 80.000000000000000000
+    OnClick = Button1Click
+  end
+  object AdapterBindSource1: TAdapterBindSource
+    AutoActivate = True
+    OnCreateAdapter = AdapterBindSource1CreateAdapter
+    Adapter = DataGeneratorAdapter1
+    ScopeMappings = <>
+    Left = 48
+    Top = 16
+  end
+  object DataGeneratorAdapter1: TDataGeneratorAdapter
+    FieldDefs = <
+      item
+        Name = 'Firstname'
+        Generator = 'LoremIpsum'
+        ReadOnly = False
+      end
+      item
+        Name = 'Lastname'
+        Generator = 'LoremIpsum'
+        ReadOnly = False
+      end
+      item
+        Name = 'Age'
+        FieldType = ftInteger
+        Generator = 'Integers'
+        ReadOnly = False
+      end>
+    Active = True
+    Options = [loptAllowInsert, loptAllowDelete, loptAllowModify]
+    Left = 104
+    Top = 16
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    UseAppManager = True
+    Left = 156
+    Top = 13
+    object LinkGridToDataSource1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = AdapterBindSource1
+      AutoBufferCount = False
+      Columns = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = AdapterBindSource1
+      FieldName = 'Firstname'
+      Control = EditFirstname
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = AdapterBindSource1
+      FieldName = 'Lastname'
+      Control = EditLastname
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = AdapterBindSource1
+      FieldName = 'Age'
+      Control = EditAge
+      Track = False
+    end
+  end
+end
