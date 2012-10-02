@@ -1,34 +1,33 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  BiDiMode = bdLeftToRight
   Caption = 'Documents Folder'
   ClientHeight = 416
   ClientWidth = 426
-  Transparency = False
-  Visible = False
-  StyleLookup = 'backgroundstyle'
+  FormFactor.Width = 1680
+  FormFactor.Height = 1050
+  FormFactor.Devices = [dkDesktop]
   object Label1: TLabel
-    Position.Point = '(168,17)'
-    Width = 409.000000000000000000
     Height = 15.000000000000000000
-    TabOrder = 0
+    Position.X = 168.000000000000000000
+    Position.Y = 17.000000000000000000
     Text = 'Label1'
+    Width = 409.000000000000000000
   end
   object Button1: TButton
-    Position.Point = '(16,10)'
-    Width = 135.000000000000000000
+    DisableFocusEffect = False
     Height = 22.000000000000000000
-    OnClick = Button1Click
-    TabOrder = 1
-    StaysPressed = False
-    IsPressed = False
+    Position.X = 16.000000000000000000
+    Position.Y = 10.000000000000000000
     Text = 'Show Contents'
+    Width = 135.000000000000000000
+    OnClick = Button1Click
   end
   object ListBox1: TListBox
-    Position.Point = '(16,56)'
-    Width = 393.000000000000000000
+    Touch.InteractiveGestures = [igPan]
     Height = 345.000000000000000000
-    TabOrder = 2
+    Position.X = 16.000000000000000000
+    Position.Y = 56.000000000000000000
+    Width = 393.000000000000000000
   end
 end

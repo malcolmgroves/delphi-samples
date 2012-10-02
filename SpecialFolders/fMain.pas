@@ -54,7 +54,7 @@ procedure TForm2.Button1Click(Sender: TObject);
                                    NSUserDomainMask,
                                    nil,
                                    false,
-                                   Error);
+                                   @Error);
     if Assigned(Error) then
       raise Exception.Create(Error.localizedDescription.UTF8String);
 
