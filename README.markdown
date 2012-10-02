@@ -15,3 +15,7 @@ SpecialFolders
 --------------
 Delphi FireMonkey application for OSX and Windows that shows how to find "Special Folders" (ie. OS folders like Documents, Desktop, etc) and enumerate the contents in a cross-platform fashion. [More info](http://www.malcolmgroves.com/blog/?p=865)
 
+LiveBindings
+------------
+Sampels from the series of LiveBinding in XE3 posts on my blog. [More info](http://www.malcolmgroves.com/blog/?tag=livebindings)
+
