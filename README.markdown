@@ -17,5 +17,5 @@ Delphi FireMonkey application for OSX and Windows that shows how to find "Specia
 
 LiveBindings
 ------------
-Sampels from the series of LiveBinding in XE3 posts on my blog. [More info](http://www.malcolmgroves.com/blog/?tag=livebindings)
+Samples from the series of LiveBinding in XE3 posts on my blog. [More info](http://www.malcolmgroves.com/blog/?tag=livebindings)
 
