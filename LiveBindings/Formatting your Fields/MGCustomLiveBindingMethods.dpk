@@ -32,6 +32,7 @@ requires
   bindengine;
 
 contains
-  CurrencyToStrMethod in 'CurrencyToStrMethod.pas';
+  CurrencyToStrMethod in 'CurrencyToStrMethod.pas',
+  MethodUtils in 'MethodUtils.pas';
 
 end.

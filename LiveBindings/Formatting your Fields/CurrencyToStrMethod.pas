@@ -3,59 +3,44 @@ unit CurrencyToStrMethod;
 interface
 
 implementation
-uses System.Bindings.Methods, System.SysUtils, System.Bindings.EvalProtocol,
-     System.Bindings.Consts;
-
-function CurrencyToStr(Value : Currency) : string;
-begin
-  Result := CurrToStrF(Value, ffCurrency, 2);
-end;
-
-function MakeMethodCurrencyToStr: IInvokable;
-begin
-  Result := MakeInvokable(function(Args: TArray<IValue>): IValue
-  var
-    v: IValue;
-  begin
-    if Length(Args) <> 1 then
-      raise EEvaluatorError.Create(Format(sUnexpectedArgCount, [1, Length(Args)]));
-    v := Args[0];
-    if v.GetValue.IsEmpty then
-      Exit(TValueWrapper.Create(nil))
-    else
-      Exit(TValueWrapper.Create(CurrencyToStr(v.GetValue.AsCurrency)));
-  end);
-end;
-
+uses System.Bindings.Methods, System.SysUtils, MethodUtils;
 
 const
   sIDCurrencyToStr = 'CurrencyToStr';
+  sIDStrToCurrency = 'StrToCurrency';
 
 procedure RegisterMethods;
 begin
-  TBindingMethodsFactory.RegisterMethod(
-    TMethodDescription.Create(
-      MakeMethodCurrencyToStr, // IInvokable for the custom method
-      sIDCurrencyToStr, // ID of the method
-      sIDCurrencyToStr, // method name
-      'CurrencyToStrMethod', // unit name
-      True, // enabled by default
-      'Format Currency String based on default regional settings', // description
-      nil
-    )
-  );
+  TMethodUtils.RegisterMethod<Currency, string>(sIDCurrencyToStr,
+    function(AValue: Currency): string
+    begin
+      Result := CurrToStrF(AValue, ffCurrency, 2);
+    end);
+
+  TMethodUtils.RegisterMethod<string, Currency>(sIDStrToCurrency,
+    function(AValue: string): Currency
+    var
+      C: char;
+      LDigits: string;
+    begin
+      for C in AValue do
+        case C of
+         '0'..'9',
+         '.':
+           LDigits := LDigits + C;
+        end;
+      Result := StrToCurr(LDigits)
+    end);
 end;
 
 procedure UnregisterMethods;
 begin
   TBindingMethodsFactory.UnRegisterMethod(sIDCurrencyToStr);
+  TBindingMethodsFactory.UnRegisterMethod(sIDStrToCurrency);
 end;
-
 
 initialization
   RegisterMethods;
 finalization
   UnregisterMethods;
-
-
 end.

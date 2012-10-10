@@ -1,12 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{B35E35BA-B060-47CA-AC7B-FF65705D1501}</ProjectGuid>
+        <ProjectGuid>{FF5A9B6E-BC41-49B5-98A1-17F37B8D4FF7}</ProjectGuid>
         <ProjectVersion>14.3</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>Project3.dpr</MainSource>
+        <MainSource>Project4.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">OSX32</Platform>
         <TargetedPlatforms>5</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -62,7 +62,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <DCC_UsePackage>bindcompfmx;DBXSqliteDriver;vcldbx;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;TeeDB;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DBXOdbcDriver;DataSnapServer;Tee;DataSnapProviderClient;xmlrtl;svnui;ibxpress;DbxCommonDriver;DBXSybaseASEDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;MetropolisUILiveTile;vclactnband;bindengine;vcldb;soaprtl;bindcompdbx;vcldsnap;bindcompvcl;FMXTee;TeeUI;vclie;vcltouch;DBXDb2Driver;websnap;DBXOracleDriver;CustomIPTransport;vclribbon;VclSmp;dsnap;IndyIPServer;DBXInformixDriver;Intraweb;fmxase;vcl;IndyCore;DataSnapConnectors;CodeSiteExpressPkg;IndyIPCommon;CloudService;dsnapcon;DBXFirebirdDriver;DBXMSSQLDriver;inet;FmxTeeUI;fmxobj;vclx;inetdbxpress;webdsnap;svn;DBXSybaseASADriver;fmxdae;bdertl;SampleAdapterPackage;dbexpress;adortl;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>bindcompfmx;DBXSqliteDriver;vcldbx;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;TeeDB;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DBXOdbcDriver;DataSnapServer;Tee;DataSnapProviderClient;xmlrtl;svnui;ibxpress;DbxCommonDriver;DBXSybaseASEDriver;vclimg;MGCustomLiveBindingMethods;IndyProtocols;dbxcds;DBXMySQLDriver;MetropolisUILiveTile;vclactnband;bindengine;vcldb;soaprtl;bindcompdbx;vcldsnap;bindcompvcl;FMXTee;TeeUI;CustomLBMethods;vclie;vcltouch;DBXDb2Driver;websnap;DBXOracleDriver;CustomIPTransport;vclribbon;VclSmp;dsnap;IndyIPServer;DBXInformixDriver;Intraweb;fmxase;vcl;IndyCore;DataSnapConnectors;CodeSiteExpressPkg;IndyIPCommon;CloudService;dsnapcon;DBXFirebirdDriver;DBXMSSQLDriver;inet;FmxTeeUI;fmxobj;MGCustomGenerator;vclx;inetdbxpress;webdsnap;svn;DBXSybaseASADriver;fmxdae;bdertl;SampleAdapterPackage;dbexpress;adortl;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -92,8 +92,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Unit4.pas">
-            <Form>Form4</Form>
+        <DCCReference Include="Unit5.pas">
+            <Form>Form5</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -149,17 +149,22 @@
                     <VersionInfoKeys Name="CFBundleExecutable"/>
                 </VersionInfoKeys>
                 <Source>
-                    <Source Name="MainSource">Project3.dpr</Source>
+                    <Source Name="MainSource">Project4.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment>
-                <DeployFile LocalName="OSX32\Debug\Project3" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="OSX32\Debug\Project4.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteName>Entitlements.plist</RemoteName>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="OSX32\Debug\Project4" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="OSX32"/>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\Project3.rsm" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="OSX32\Debug\Project4.rsm" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\MacOS\</RemoteDir>
-                        <RemoteName>Project3.rsm</RemoteName>
+                        <RemoteName>Project4.rsm</RemoteName>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
@@ -167,18 +172,13 @@
                     <Platform Name="iOSSimulator"/>
                     <Platform Name="iOSDevice"/>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\Project3.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements">
-                    <Platform Name="OSX32">
-                        <RemoteName>Entitlements.plist</RemoteName>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\Project3.icns" Configuration="Debug" Class="ProjectOSXResource">
-                    <Platform Name="OSX32"/>
-                </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\Project3.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList">
+                <DeployFile LocalName="OSX32\Debug\Project4.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList">
                     <Platform Name="OSX32">
                         <RemoteName>Info.plist</RemoteName>
                     </Platform>
+                </DeployFile>
+                <DeployFile LocalName="OSX32\Debug\Project4.icns" Configuration="Debug" Class="ProjectOSXResource">
+                    <Platform Name="OSX32"/>
                 </DeployFile>
                 <DeployClass Required="true" Name="DependencyPackage">
                     <Platform Name="iOSDevice">
