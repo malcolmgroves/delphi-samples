@@ -1,0 +1,63 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 480
+  ClientWidth = 292
+  FormFactor.Width = 1680
+  FormFactor.Height = 1050
+  FormFactor.Devices = [dkDesktop]
+  object Grid1: TGrid
+    Touch.InteractiveGestures = [igPan]
+    Height = 393.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 56.000000000000000000
+    Width = 241.000000000000000000
+    RowCount = 200
+    RowHeight = 21.000000000000000000
+    object TStringColumn
+      Header = 'Email'
+      Height = 368.000000000000000000
+      Width = 180.000000000000000000
+    end
+  end
+  object NavigatorPrototypeBindSource1: TBindNavigator
+    Height = 25.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 16.000000000000000000
+    Width = 240.000000000000000000
+    DataSource = PrototypeBindSource1
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object PrototypeBindSource1: TPrototypeBindSource
+    AutoActivate = True
+    FieldDefs = <
+      item
+        Name = 'Email'
+        Generator = 'EmailAddresses'
+        ReadOnly = False
+      end>
+    ScopeMappings = <>
+    Left = 224
+    Top = 256
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    UseAppManager = True
+    Left = 228
+    Top = 181
+    object LinkGridToDataSource1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = PrototypeBindSource1
+      GridControl = Grid1
+      AutoBufferCount = False
+      Columns = <
+        item
+          MemberName = 'Email'
+          Width = 180
+        end>
+    end
+  end
+end

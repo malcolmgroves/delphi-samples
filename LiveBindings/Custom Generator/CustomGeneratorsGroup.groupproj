@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4E4B5D87-CE26-4AF4-A8D9-04555282EEEC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MGCustomGenerator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project3.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MGCustomGenerator">
+        <MSBuild Projects="MGCustomGenerator.dproj"/>
+    </Target>
+    <Target Name="MGCustomGenerator:Clean">
+        <MSBuild Projects="MGCustomGenerator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MGCustomGenerator:Make">
+        <MSBuild Projects="MGCustomGenerator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project3">
+        <MSBuild Projects="Project3.dproj"/>
+    </Target>
+    <Target Name="Project3:Clean">
+        <MSBuild Projects="Project3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project3:Make">
+        <MSBuild Projects="Project3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MGCustomGenerator;Project3"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MGCustomGenerator:Clean;Project3:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MGCustomGenerator:Make;Project3:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
