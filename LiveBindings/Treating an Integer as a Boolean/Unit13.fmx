@@ -1,0 +1,83 @@
+object Form13: TForm13
+  Left = 0
+  Top = 0
+  Caption = 'Form13'
+  ClientHeight = 327
+  ClientWidth = 289
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  OnShow = FormShow
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Grid1: TGrid
+    Height = 249.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 56.000000000000000000
+    TabOrder = 0
+    Width = 257.000000000000000000
+    RowCount = 0
+    RowHeight = 21.000000000000000000
+  end
+  object NavigatorBindSourceDB1: TBindNavigator
+    Height = 33.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Width = 260.000000000000000000
+    DataSource = BindSourceDB1
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'IntegerField'
+        DataType = ftSmallint
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 48
+    Top = 128
+    object ClientDataSet1IntegerField: TSmallintField
+      DefaultExpression = '1'
+      FieldName = 'IntegerField'
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 136
+    Top = 128
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 52
+    Top = 197
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      AutoBufferCount = False
+      Columns = <
+        item
+          MemberName = 'IntegerField'
+          Width = 80
+          CustomFormat = 'ToStr(%s) <> "0"'
+          CustomParse = 'IfThen(ToStr(%s) = "True", -1, 0)'
+          ColumnStyle = 'CheckColumn'
+        end
+        item
+          MemberName = 'IntegerField'
+          Header = 'IntegerField (Raw)'
+          Width = 100
+        end>
+    end
+  end
+end
